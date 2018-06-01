@@ -834,8 +834,7 @@ class RegistrationFormFactory(object):
         if not separate_honor_and_tos:
             current_request = crum.get_current_request()
 
-            if not is_request_from_mobile_app(current_request):
-                field_type = 'plaintext'
+            field_type = 'plaintext'
 
             pp_link = marketing_link("PRIVACY")
             label = Text(_(
