@@ -136,6 +136,7 @@ class UserApiTestCase(UserAPITestCase):
             UserPreferenceFactory.create(user=self.users[1], key="key0")
         ]
 
+
 class RoleTestCase(UserApiTestCase):
     """
     Test cases covering Role-related views and their behaviors
