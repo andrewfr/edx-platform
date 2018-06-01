@@ -1657,9 +1657,9 @@ class RegistrationViewTest(ThirdPartyAuthTestMixin, UserAPITestCase):
             {"honor_code": "required"},
             {
                 "label": (u"By creating an account with {platform_name}, you agree {spacing}"
-                         u"to abide by our {platform_name} {spacing}"
-                         u"{link_label} {spacing}"
-                         u"and agree to our {link_label2}.").format(
+                          u"to abide by our {platform_name} {spacing}"
+                          u"{link_label} {spacing}"
+                          u"and agree to our {link_label2}.").format(
                     platform_name=settings.PLATFORM_NAME,
                     link_label=link_template.format(link_label=link_label),
                     link_label2=link_template2.format(link_label=link_label2),
@@ -1688,9 +1688,9 @@ class RegistrationViewTest(ThirdPartyAuthTestMixin, UserAPITestCase):
             {"honor_code": "required"},
             {
                 "label": (u"By creating an account with {platform_name}, you agree {spacing}"
-                         u"to abide by our {platform_name} {spacing}"
-                         u"{link_label} {spacing}"
-                         u"and agree to our {link_label2}.").format(
+                          u"to abide by our {platform_name} {spacing}"
+                          u"{link_label} {spacing}"
+                          u"and agree to our {link_label2}.").format(
                     platform_name=settings.PLATFORM_NAME,
                     link_label=self.link_template.format(link_label=link_label),
                     link_label2=link_template.format(link_label=link_label2),
