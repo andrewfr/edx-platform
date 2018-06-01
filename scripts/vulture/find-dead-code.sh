@@ -30,7 +30,9 @@ set -e
 #
 ############################################################################
 
-OUTPUT_FILE="$(dirname "${BASH_SOURCE[0]}")/dead-code.txt"
+OUTPUT_DIR="reports/vulture"
+mkdir -p ${OUTPUT_DIR}
+OUTPUT_FILE=${OUTPUT_DIR}/vulture-report.txt
 echo '' > $OUTPUT_FILE
 # exclude test code from analysis, as it isn't explicitly called by other
 # code. Additionally, application code that is only called by tests 
@@ -45,4 +47,4 @@ echo "Results can be found in $OUTPUT_FILE"
 echo "Printing the top 10 largest instances of potential dead code:"
 vulture $CODE_PATHS $WHITELIST_PATH --exclude $EXCLUSIONS \
 --min-confidence $MIN_CONFIDENCE \
---sort-by-size |tac |tee $OUTPUT_FILE | head -n 10
+--sort-by-size |tac > $OUTPUT_FILE
