@@ -331,8 +331,7 @@ class RegisterFromCombinedPageTest(UniqueCourseTest):
             email=email,
             password="password",
             username="",
-            full_name="Test User",
-            terms_of_service=False
+            full_name="Test User"
         )
         # Verify that the expected errors are displayed.
         errors = self.register_page.wait_for_errors()
@@ -369,8 +368,8 @@ class RegisterFromCombinedPageTest(UniqueCourseTest):
         self.assertEqual(self.register_page.full_name_value, "William Adama")
         self.assertIn("Galactica1", self.register_page.username_value)
 
-        # Set country, accept the terms, and submit the form:
-        self.register_page.register(country="US", favorite_movie="Battlestar Galactica", terms_of_service=True)
+        # Set country and submit the form:
+        self.register_page.register(country="US", favorite_movie="Battlestar Galactica")
 
         # Expect that we reach the dashboard and we're auto-enrolled in the course
         course_names = self.dashboard_page.wait_for_page().available_courses
